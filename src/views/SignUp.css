@@ -1,0 +1,72 @@
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.signup-username, .signup-email, .signup-password {
+    position: relative;
+    display: flex;    
+}
+
+.signup-label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0px;
+    left: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.5s; 
+    pointer-events: none;   
+}
+
+.signup-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.603);
+    outline: none;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.signup-input:focus {
+    border-color: steelblue;
+}
+
+.signup-input:focus ~ .signup-label,
+.signup-input:not(:placeholder-shown) ~ .signup-label {
+    top: -20px;
+    font-size: 1rem;
+    color: steelblue;
+}
+
+.btn-signup {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    background: rgb(9, 82, 9);
+    color: antiquewhite;
+    padding: 1rem;
+    transition: all 300ms;
+    margin-top: 10vh;
+    box-shadow: 4px 4px 10px rgb(163, 163, 163);
+}
+
+.btn-signup:hover {
+    background: rgb(148, 209, 148);
+    color: rgb(56, 56, 56);
+}
+
+.btn-signup:active {
+    box-shadow: 0px 0px 10px rgb(163, 163, 163);
+}
+
+.back-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+}

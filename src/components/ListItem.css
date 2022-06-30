@@ -1,0 +1,175 @@
+.list-item {
+    /* max-width: 500px; */
+    /* margin: 0 auto; */
+    padding: 1.4rem 1rem;
+    gap: 2rem;
+    min-height: 60px; 
+    background: #EDEDED;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.list-item--done {
+    background: rgb(146, 230, 146) !important;
+    border-bottom: 1px solid gray;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;  
+}
+
+/* GÖRA EN ? FÖR ATT FÖRKLARA *blå med vit ?* 
+ändra Add till vit i favorite vid input active
+GÖRA CHECKMARK VID GRÖN I SHOPPINGLISTAN */
+
+.items p {
+    /* text-align: left; */
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.comment {
+    margin-top: 0.6rem;
+    margin-left: 2rem;
+    font-style: italic;
+}
+
+.favorite {
+    width: 20px;
+    height: 20px;
+}
+
+.amount {
+    /* display: flex; */
+}
+
+.amount > * {
+    margin: 0;
+}
+
+.btn-amount {
+    border: none;
+    background: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 8px;
+}
+
+.item-done {
+    max-height: 1.5rem;
+    margin-right: 1.5rem;
+    min-height: 29.38px;
+}
+
+
+.btn-removeItem {
+    border: none;
+    background: transparent;
+    color: blue;
+}
+
+select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem 0.2rem 1.6rem;
+}
+
+.shopping-items .list-item select {
+    background: #F3E4E1;
+    border: 1px solid gray;
+    color: #042A2B;
+    box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.33);
+}
+
+.shopping-items .list-item select option {
+    padding: 2rem;
+}
+
+/* .shopping-items .list-item:nth-child(odd) select {
+    background: rgb(182, 182, 182);
+}
+
+.shopping-items .list-item:nth-child(even) select {
+    background: rgb(238, 210, 184);
+} */
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#delete-checkbox {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    z-index: 5;
+}
+
+.testa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    background-color: #eee;
+    z-index: 3;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .testa {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkbox-container input:checked ~ .testa {
+    background-color: #096838;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .testa:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkbox-container input:checked ~ .testa:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox-container .testa:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

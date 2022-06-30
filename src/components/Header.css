@@ -1,0 +1,198 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background-color: white;
+    z-index: 10;
+    box-shadow:
+  0px 9px 10px rgba(0, 0, 0, 0.13)
+;
+
+}
+
+.logo {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.nav {
+    position: fixed;
+    background: rgba(47, 79, 79, 0.98);
+    /* backdrop-filter: blur(2rem); */
+    inset: 0 0 0 30%;
+    display: flex;   
+    z-index: 100; 
+    transform: translateX(100%);
+    transition: 300ms ease-in-out;
+}
+
+.nav > * {
+    flex: 1;    
+}
+
+.menu-btn {
+    position: fixed;
+    display: block;
+    z-index: 9999;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    background-color: transparent;
+    z-index: 9999; 
+    height: 20px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+.menu-btn span {
+    width: 30px;
+    height: 4px;
+    background: rgb(0, 0, 0);    
+    transition: 300ms ease-in-out;
+    transform-origin: top left;
+}
+
+.menu-btn .menu-btn--top, .menu-btn .menu-btn--bottom {
+    transform: rotateZ(45deg);    
+}
+
+.menu-btn .menu-btn--mid {
+    opacity: 0;
+}
+
+.menu-btn .menu-btn--bottom {
+    transform: rotateZ(-45deg);
+}
+
+.menu-btn .menu--dark {
+    background:rgba(0, 0, 0);
+}
+
+.open {
+    transform: translateX(0);
+}
+
+.link-container {   
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;    
+}
+
+.link {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.delete-mobile {
+    margin-top: 2rem;
+    color: tomato;
+}
+
+.nav-headline {
+    font-size: 26px;
+}
+
+@media screen and (min-width: 786px) {
+    /* Scrollbar */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
+    .nav {
+        position: relative;
+        width: 100%;        
+        background: transparent;
+        backdrop-filter: none;
+        inset: 0;       
+        transform: translateX(0); 
+    }
+
+    .nav--fixed {
+        position: fixed;
+        background: #fff;
+        top: 0;
+        height: 60px;
+        box-shadow: 0px 4px 10px 10px rgb(43, 41, 41);
+    }
+
+    .nav--fixed .link {
+        color: black;       
+    }
+
+    .logo {
+        display: block;
+        margin-left: 2rem;        
+    }
+
+    .link-container {   
+        margin: 1rem 5rem;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .link {
+        position: relative;
+        color: #000;
+    }   
+
+    .link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: -8px;
+        width: 80%;
+        height: 8px;
+        opacity: 0;
+        background: rgb(24, 92, 28);   
+        transition: all 300ms ease-in-out;     
+    }
+
+    .link:hover::after {
+        opacity: 1;
+    }
+
+    .delete-mobile {
+        display: none;
+    }
+
+    .nav-headline {
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-headline {
+        display: none;
+    }
+}

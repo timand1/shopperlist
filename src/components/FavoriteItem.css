@@ -1,0 +1,38 @@
+.favorite-item {
+    padding: 1rem;
+    min-height: 60px;
+    background: #EDEDED;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.favorite-item p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.test {
+    width: 50px;
+    height: 50px;
+    background: black;
+}
+
+.favorite-item--added {
+    background: rgb(146, 230, 146) !important;
+    border-bottom: 1px solid gray;
+}
+
+.added-icon {
+    max-height: 1.5rem;
+}
+
+.btn-addFavorite {
+    background: transparent;
+    /* border: 1px solid black; */
+    border: none;
+    /* border-radius: 50%; */
+    font-size: 20px;
+    font-weight: 700;
+}
