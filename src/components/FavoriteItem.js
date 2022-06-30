@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { addItem, checkIfItem } from '../redux/actions/shoppingAction';
 import { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function FavoriteItem(props) {
     const { item, setDeletePopUp, setFavoriteDelete, setFavoritesRemove, favoritesRemove } = props
@@ -32,7 +33,8 @@ export default function FavoriteItem(props) {
         const newItem = {
             item: item.item,
             amount: 1,
-            comment: ''
+            comment: '',
+            id: uuidv4()
         }
 
         const body = JSON.stringify(newItem)
