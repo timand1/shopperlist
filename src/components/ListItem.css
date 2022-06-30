@@ -137,6 +137,7 @@ select {
     border-radius: 8px;
     background-color: #eee;
     z-index: 3;
+    border: 1px solid gray;
 }
 
 /* On mouse-over, add a grey background color */
@@ -163,8 +164,8 @@ select {
   
   /* Style the checkmark/indicator */
   .checkbox-container .testa:after {
-    left: 9px;
-    top: 5px;
+    left: 8px;
+    top: 4px;
     width: 5px;
     height: 10px;
     border: solid white;
