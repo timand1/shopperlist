@@ -12,6 +12,7 @@ export default function ListItem(props) {
     const dispatch = useDispatch();
 
     const favoritesList = useSelector(state => state.favoritesList);
+    localStorage.setItem('favoritesList', JSON.stringify(favoritesList))
     const deleteMode = useSelector(state => state.deleteSetting);
 
     const filteredFavorites = favoritesList.filter(e => e.item === item.item)
