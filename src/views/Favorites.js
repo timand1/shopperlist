@@ -94,6 +94,16 @@ export default function Favorites(props) {
     }
         
     const favorites = useSelector(state => state.favoritesList);
+    favorites.sort((a, b) => {
+        if (a.item < b.item) {
+            return -1;
+        }
+        if (a.item > b.item) {
+            return 1;
+        }
+        return 0;
+    })
+    
     localStorage.setItem('favoritesList', JSON.stringify(favorites))
     const favoriteItems = favorites.map((e, index) => <FavoriteItem item={e} key={index} setDeletePopUp={setDeletePopUp} setFavoriteDelete={setFavoriteDelete} setFavoritesRemove={setFavoritesRemove} favoritesRemove={favoritesRemove}/>)
 
