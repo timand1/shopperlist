@@ -140,30 +140,26 @@ select {
     /* border: 1px solid gray; */
 }
 
-/* On mouse-over, add a grey background color */
 .checkbox-container:hover input ~ .testa {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .checkbox-container input:checked ~ .testa {
+}
+
+.checkbox-container input:checked ~ .testa {
     background-color: #096838;
-  }
+}
   
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .testa:after {
+
+.testa:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
   
-  /* Show the checkmark when checked */
-  .checkbox-container input:checked ~ .testa:after {
+.checkbox-container input:checked ~ .testa:after {
     display: block;
-  }
+}
   
-  /* Style the checkmark/indicator */
-  .checkbox-container .testa:after {
+.checkbox-container .testa:after {
     left: 8px;
     top: 4px;
     width: 5px;
@@ -173,4 +169,4 @@ select {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
