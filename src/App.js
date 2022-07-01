@@ -26,7 +26,8 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/shoppinglist' element={<ShoppingList accountKey={accountKey} loggedIn={loggedIn} setLoggedIn={setLoggedIn} username={username} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />} />
         <Route path='/favorites' element={<Favorites accountKey={accountKey} loggedIn={loggedIn} setLoggedIn={setLoggedIn} username={username} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>} />
-        <Route path='*' element={<ErrorPage />} />
+        <Route path='*' element={<LoginPage setAccountKey={setAccountKey} setLoggedIn={setLoggedIn} loggedIn={loggedIn} setUsername={setUsername} username={username}/>} />
+
       </Routes>
     </div>
   );
