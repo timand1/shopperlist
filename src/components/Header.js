@@ -3,7 +3,8 @@ import logo from '../assets/logo.svg'
 import { useEffect, useState } from 'react';
 import { useNavigate, NavLink, useLocation } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteSettings } from '../redux/actions/shoppingAction';
+import { deleteSettings, logOutAction } from '../redux/actions/shoppingAction';
+
 
 export default function Header(props) {
     const {setLoggedIn, menuOpen, setMenuOpen, setDeleteMode } = props;
@@ -23,6 +24,7 @@ export default function Header(props) {
     function logOut() {
         setLoggedIn(false)
         setMenuOpen(false)
+        dispatch(logOutAction())
         localStorage.removeItem('username')
         localStorage.removeItem('accountKey')
         localStorage.removeItem('shopperList')

@@ -21,6 +21,11 @@ export default function ShoppingList(props) {
     const dispatch = useDispatch();
     const deleteMode = useSelector(state => state.deleteSetting);
     
+    let shopperList = useSelector(state => state.shopperList);
+    localStorage.setItem('shopperList', JSON.stringify(shopperList))
+    const shoppingItem = shopperList.map((item, index) => <ListItem item={item} key={index} accountKey={accountKey} setDeletePopUp={setDeletePopUp} setItemRemove={setItemRemove} />)
+
+
 
     useEffect(() => {
         const username = localStorage.getItem('username')
@@ -182,11 +187,7 @@ export default function ShoppingList(props) {
         setDeletePopUp(true)
     }
     
-    let shopperList = useSelector(state => state.shopperList);
-    localStorage.setItem('shopperList', JSON.stringify(shopperList))
-    const shoppingItem = shopperList.map((item, index) => <ListItem item={item} key={index} accountKey={accountKey} setDeletePopUp={setDeletePopUp} setItemRemove={setItemRemove} />)
-
-
+ 
     
 
     // function deleteAllItems() {

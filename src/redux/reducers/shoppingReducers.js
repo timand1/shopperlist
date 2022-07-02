@@ -16,6 +16,8 @@ const shoppingReducer = (state = initialState, action) => {
             } else {
                 newList = action.payload
             }
+
+            localStorage.setItem('shopperList', JSON.stringify(newList))
             return {
                 ...state,
                 shopperList: newList
@@ -44,6 +46,7 @@ const shoppingReducer = (state = initialState, action) => {
                 }
             })
 
+            localStorage.setItem('shopperList', JSON.stringify(listCopy))
             return {
                 ...state,
                 shopperList : [...listCopy]
@@ -62,7 +65,7 @@ const shoppingReducer = (state = initialState, action) => {
                 shopperList: [...shopperListCopy]                
             }
         case 'EMPTY_LIST':
-
+            localStorage.removeItem('shopperList')
             return {
                 ...state,
                 shopperList: []                
@@ -74,7 +77,7 @@ const shoppingReducer = (state = initialState, action) => {
             } else {
                 newFavorites = action.payload
             }
-            
+            localStorage.setItem('favoritesList', JSON.stringify(newFavorites))
             return {
                 ...state,
                 favoritesList: [...newFavorites]
@@ -104,14 +107,14 @@ const shoppingReducer = (state = initialState, action) => {
             for(const item of action.payload) {
                 updatedFavorites = updatedFavorites.filter(e => e.item !== item.item)
             }
-
+            localStorage.setItem('favoritesList', JSON.stringify(updatedFavorites))
             return {
                 ...state,
                 favoritesList: [...updatedFavorites]
             }
 
         case 'EMPTY_FAVORITES':
-
+            localStorage.removeItem('favoritesList')
             return {
                 ...state,
                 favoritesList: []
@@ -141,6 +144,15 @@ const shoppingReducer = (state = initialState, action) => {
             return {
                 ...state,
                 favoritesList: [...state.favoritesList, action.payload]
+            }
+        case 'LOG_OUT':
+            localStorage.clear()
+            return {
+                shopperList: [],
+                shopperDeleteList: [],
+                favoritesList: [],
+                favoritesDeleteList: [],
+                deleteSetting: false
             }
         default: 
             return state

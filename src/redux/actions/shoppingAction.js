@@ -89,4 +89,11 @@ const checkIfItem = (item) => {
     }
 }
 
-export { getList, addItem, removeItem, updateAmount, updateItemDone, emptyList, getFavorites, addFavorite, removeFavorite, emptyFavorites, deleteSettings, checkIfFavorite, checkIfItem }
+const logOutAction = (item) => {
+    return {
+        type: 'LOG_OUT',
+        payload: item
+    }
+}
+
+export { getList, addItem, removeItem, updateAmount, updateItemDone, emptyList, getFavorites, addFavorite, removeFavorite, emptyFavorites, deleteSettings, checkIfFavorite, checkIfItem, logOutAction }
