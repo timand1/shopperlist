@@ -61,13 +61,13 @@ export default function SignUp() {
         console.log(data)
         if (data.success === true) {
             setTimeout(() => {
-                navigate('/')
+                navigate('/shopperlist')
             }, 2000);
         } 
     }
 
     function goToStart() {
-        navigate('/')
+        navigate('/shopperlist')
     }
 
     return (

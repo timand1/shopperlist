@@ -29,7 +29,7 @@ export default function Header(props) {
         localStorage.removeItem('accountKey')
         localStorage.removeItem('shopperList')
         localStorage.removeItem('favoritesList')
-        navigate('/')
+        navigate('/shopperlist')
     }
 
     function changeUrl() {

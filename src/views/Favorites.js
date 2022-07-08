@@ -27,7 +27,7 @@ export default function Favorites(props) {
         const accountId = localStorage.getItem('accountKey')
         if(!username && !accountId) {
             setLoggedIn(false)
-            navigate('/')
+            navigate('/shopperlist')
         } else {
             const requestOptions = {
                 method: 'GET',
@@ -297,7 +297,7 @@ export default function Favorites(props) {
                 <article>
                     <h1>Hey</h1>
                     <p>You need to log in first!</p>
-                    <button className="error-button" onClick={() => { navigate('/') }}>Log In</button>
+                    <button className="error-button" onClick={() => { navigate('/shopperlist') }}>Log In</button>
                 </article>}            
         </section>
     )

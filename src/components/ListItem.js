@@ -150,7 +150,7 @@ export default function ListItem(props) {
                     {item.favorite && <img src={favoriteFill} alt="filled favorite" className="favorite favorite-fill" />}
                     {!item.favorite && <img src={favoriteEmpty} alt="empty favorite" className="favorite favorite-empty" />}
                 </p>
-                <p>{item.item}</p>
+                <p className='item-name'>{item.item}</p>
                 {!deleteMode && !item.itemIsDone && <select name="amount" id="amount" value={item.amount} onChange={(e) => {itemAmount(e)}} onClick={(e) => {e.stopPropagation()}}>
                     <option value="1">1</option>
                     <option value="2">2</option>

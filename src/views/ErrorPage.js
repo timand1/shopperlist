@@ -8,7 +8,7 @@ export default function ErrorPage() {
             <p>Where are you going?</p>
             <p>Hello?</p>
             <p>Leave this place... and never come back!</p>
-            <button className="error-button" onClick={() => { navigate('/') }}>FINE I'LL LEAVE</button>
+            <button className="error-button" onClick={() => { navigate('/shopperlist') }}>FINE I'LL LEAVE</button>
         </section>
     )
 }

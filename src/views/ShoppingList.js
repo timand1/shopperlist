@@ -32,7 +32,7 @@ export default function ShoppingList(props) {
         const accountId = localStorage.getItem('accountKey')
         if(!username && !accountId) {
             setLoggedIn(false)
-            navigate('/')
+            navigate('/shopperlist')
         } else {
   
             const requestOptions = {
@@ -296,7 +296,7 @@ export default function ShoppingList(props) {
                 <article>
                     <h1>Hey</h1>
                     <p>You need to log in first!</p>
-                    <button className="error-button" onClick={() => { navigate('/') }}>Log In</button>
+                    <button className="error-button" onClick={() => { navigate('/shopperlist') }}>Log In</button>
                 </article>}
         </section>
     )
